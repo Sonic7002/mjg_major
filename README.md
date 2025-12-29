@@ -1,4 +1,4 @@
-# major project for my job grow data structures and algorithms internship program 
+# Major project for My Job Grow data structures and algorithms internship program 
 
 # 📚 Library Management System (Linked List Based)
 
@@ -26,14 +26,14 @@ This project intentionally avoids Python’s built-in containers (like `dict`) t
 - Object-Oriented Programming (OOP)
 - Singly Linked List (manual implementation)
 - Encapsulation and abstraction
-- Exception handling (`ValueError`)
+- Exception handling
 - Modular design principles
 - Console User Interface (CUI)
 
 ---
 
 ## 🏗 Project Structure
-
+```
 library_system/
 │
 ├── main.py # Entry point (menu & user interaction)
@@ -41,7 +41,7 @@ library_system/
 ├── models.py # Data models (Book class)
 ├── utils.py # Helper utilities (clear screen, pause)
 └── README.md # Project documentation
-
+```
 
 ---
 
@@ -98,10 +98,24 @@ The `Library` class manages the linked list and exposes all operations such as:
 - Python **3.10+** (required for `match-case`)
 
 ### Run the program
-```bash
+```
 python main.py
+```
 
-# 👤 Author
+### 🖥 Sample Menu
+```
+*********************** MENU ***********************
+1. Add book
+2. Edit stock of a book
+3. Remove book
+4. Issue book
+5. Return book
+6. Search for a book
+7. Display all books
+8. Exit
+```
+---
+## 👤 Author
 
-Developed by Srijan Kargupta
+Developed by Srijan Kargupta.\
 Focused on mastering data structures, OOP, and backend fundamentals through hands-on projects.
