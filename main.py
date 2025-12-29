@@ -1,3 +1,4 @@
+# main method contains ui and method calls
 from library import Library
 from utils import clear_screen, pause
 

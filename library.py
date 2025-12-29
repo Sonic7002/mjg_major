@@ -1,10 +1,13 @@
+# this file contains the library class resposible for all operations on the linked list
 from models import Book
 
 class Library:
     def __init__(self):
+        """constructor for initialising the head of the linked list"""
         self.head = None
 
     def _find_by_id(self, book_id):
+        """protected method to be used to find a book based on its id provoded"""
         current = self.head
         while current is not None:
             if current.ID == book_id:
@@ -13,6 +16,7 @@ class Library:
         return None
 
     def add_book(self, name, book_id, author, total):
+        """adds a new book to the collection of books requires the parameters of the book"""
         if total <= 0:
             raise ValueError("Total books cannot be negative")
         if self._find_by_id(book_id) is not None:
@@ -26,6 +30,7 @@ class Library:
         current.next = Book(name, book_id, author, total)
 
     def add_stock(self, book_id, added):
+        """edit stock for a existing book collection"""
         if added <= 0:
             raise ValueError("Added stock must be positive")
         current = self._find_by_id(book_id)
@@ -35,6 +40,7 @@ class Library:
         current.available += added
 
     def remove(self, book_id):
+        """used to remove a collection of books from the existing collection based on book id"""
         if self.head is None:
             raise ValueError("No books are available")
         if self.head.ID == book_id:
@@ -55,6 +61,7 @@ class Library:
         raise ValueError("Book ID not found")
 
     def search(self, key) -> list[dict]:
+        """searches for a book based on the given key and returns matched results"""
         current = self.head
         result = []
         while current is not None:
@@ -69,6 +76,7 @@ class Library:
         return result.copy()
 
     def issue_book(self, book_id):
+        """issues a book based on id"""
         book = self._find_by_id(book_id)
         if book is None:
             raise ValueError("Book ID not found")
@@ -77,6 +85,7 @@ class Library:
         book.available -= 1
 
     def return_book(self, book_id):
+        """returns a issued book"""
         book = self._find_by_id(book_id)
         if book is None:
             raise ValueError("Book ID not found")
@@ -85,6 +94,7 @@ class Library:
         book.available += 1
 
     def list_books(self) -> list[dict]:
+        """returns a list of all books"""
         books = []
         current = self.head
         while current is not None:
